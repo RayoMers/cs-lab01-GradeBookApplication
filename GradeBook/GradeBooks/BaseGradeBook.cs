@@ -9,14 +9,17 @@ using Newtonsoft.Json.Linq;
 
 namespace GradeBook.GradeBooks
 {
-    public class BaseGradeBook
+    public abstract class BaseGradeBook
     {
         public string Name { get; set; }
         public List<Student> Students { get; set; }
+        public bool IsWeighted { get; set; }
+        public GradeBookType Type { get; set; }
 
-        public BaseGradeBook(string name)
+        public BaseGradeBook(string name, bool isWeighted)
         {
             Name = name;
+            IsWeighted = isWeighted;
             Students = new List<Student>();
         }
 
@@ -120,7 +123,9 @@ namespace GradeBook.GradeBooks
                     return 0;
             }
             return 0;
+           
         }
+    
 
         public virtual void CalculateStatistics()
         {

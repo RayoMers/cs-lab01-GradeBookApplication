@@ -86,7 +86,7 @@ namespace GradeBookTests
                         Assert.True(output.Contains("command not valid, create requires a name, type of gradebook, if it's weighted (true / false)."), "`GradeBook.UserInterfaces.StartingUserInterface` didn't write 'Command not valid, Create requires a name, type of gradebook, if it's weighted (true / false)..' to the console when the create command didn't contain both a name and type.");
 
                         //Test that `CreateCommand` escapes returns without setting the gradebook when parts.Length != 4.
-                        Assert.True(!output.Contains("created gradebook"), "`GradeBook.UserInterfaces.StartingUserInterface` still created a gradebook when the create command didn't contain a name, type, if it's weighted (true / false).");
+                        Assert.True(!output.Contains("created gradebook"), "`GradeBook.UserInterfaces.StartingUserInterface` Command not valid, Create requires a name, type of gradebook, if it's weighted (true / false).");
                     }
                 }
             }
